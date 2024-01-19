@@ -4,7 +4,7 @@ Este es un sencillo juego de Piedra, Papel o Tijeras implementado en HTML, CSS y
 
 ## Uso
 
-Para jugar, simplemente abre el archivo `index.html` en un navegador web.
+Para jugar, clona el repositorio o descarga los archivos, y abre el archivo `index.html` en un navegador web.
 
 ## Características
 
@@ -21,13 +21,9 @@ Para jugar, simplemente abre el archivo `index.html` en un navegador web.
 ## Estructura del Proyecto
 
 - `index.html`: Archivo HTML que contiene la estructura del juego.
-- `style.css`: Archivo CSS para el estilo.
+- `style.css`: Archivo CSS para el estilo de la estructura.
 - `app.js`: Archivo JavaScript que contiene la lógica del juego.
 
 ## Autor
 
 Hecho por [Frank](https://github.com/FrankSkep)
-
-## Licencia
-
-Este proyecto está bajo la [Licencia MIT](LICENSE).
