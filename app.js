@@ -1,21 +1,28 @@
+// Obtencion de elemento con las imagenes de la opcion de cada jugador
 const userImg = document.getElementById("user-img");
 const machineImg = document.getElementById("machine-img");
 
+// Obtencion del elemento para mostrar resultado
 const resultText = document.getElementById("start-text");
 
+// Obtencion de los botones
 const rockButton = document.getElementById("rock");
 const paperButton = document.getElementById("paper");
 const scissorsButton = document.getElementById("scissors");
 
+// Constantes con los resultados
 const TIE = 0;
 const WIN = 1;
 const LOST = 2;
 let isPlaying = false;
 
+// Constantes con las opciones
 const ROCK = "rock";
 const PAPER = "paper";
 const SCISSORS = "scissors";
 
+
+// Agregar evento al hacer click a los botones
 rockButton.addEventListener("click", () => {
   play(ROCK);
 });
@@ -28,6 +35,7 @@ scissorsButton.addEventListener("click", () => {
   play(SCISSORS);
 });
 
+// Funcion
 function play(userOption) {
   if (isPlaying) return;
   isPlaying = true;
@@ -36,8 +44,9 @@ function play(userOption) {
 
   resultText.innerHTML = `<b>...<b/>`;
 
+  // Intervalo para cambiar imagen cada 2 milesimas
   const interval = setInterval(function () {
-    const machineOption = calcMachineOption();
+    const machineOption = determineMachineOption();
     machineImg.src = "images/" + machineOption + ".svg";
   }, 200);
 
@@ -45,10 +54,13 @@ function play(userOption) {
 
     clearInterval(interval);
 
-    const machineOption = calcMachineOption();
+    const machineOption = determineMachineOption();
+
+    // Guardar resultado en variable result
     const result = gameResult(userOption, machineOption);
     machineImg.src = "images/" + machineOption + ".svg";
 
+    // Switch case con los resultados
     switch (result) {
       case WIN:
         resultText.innerHTML = "<b>You win!</b>";
@@ -63,8 +75,8 @@ function play(userOption) {
   }, 1500);
 }
 
-// Funcion para definir la option de la maquina
-function calcMachineOption() {
+// Funcion para calcular la opcion de la maquina
+function determineMachineOption() {
   const machineOption = Math.floor(Math.random() * 3);
 
   switch (machineOption) {
@@ -77,8 +89,7 @@ function calcMachineOption() {
   }
 }
 
-
-// Funcion para calcular resultado del juego
+// Funcion para calcular resultado
 function gameResult(userOpt, machineOpt) {
   if (userOpt === machineOpt) {
     return TIE;

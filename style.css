@@ -37,12 +37,8 @@ button {
 }
 
 button:active {
-  background-color: #18dfc5;
+  background-color: rgb(221, 197, 168);
   transform: scale(0.85);
-}
-
-button:hover {
-  color: rgb(255, 255, 255);
 }
 
 .container {
