@@ -13,7 +13,7 @@ footer {
   text-align: center;
   padding: 10px;
   font-family: "Courier New", Courier, monospace;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 footer a,
@@ -25,15 +25,15 @@ b {
 
 button {
   background-color: #ffffff;
-  border: 4px solid black;
-  margin: 5px;
   cursor: pointer;
   border-radius: 20px;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 130px;
+  height: 130px;
 
   margin: 10px; /* Ajustar el espacio entre los botones según sea necesario */
   padding: 10px; /* Ajustar el espacio interno de los botones según sea necesario */
-  border: none; /* Eliminar el borde de los botones si no es necesario */
+  border: none; 
 }
 
 button:active {
@@ -97,4 +97,5 @@ h1 {
   width: 100px; /* Ajustar el ancho de las imágenes según sea necesario */
   height: 120px; /* Ajustar la altura de las imágenes según sea necesario */
   width: 100%;
+  margin-top: 1;
 }
