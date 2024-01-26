@@ -71,8 +71,8 @@ h1 {
 }
 
 #result img {
-  width: 28%;
-  max-width: 35%; /* Para asegurar que las imágenes no se sobrepongan */
+  width: 26%;
+  max-width: 30%; /* Para asegurar que las imágenes no se sobrepongan */
   height: auto;
   background-color: white;
   border-radius: 65px;
