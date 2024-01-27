@@ -24,6 +24,4 @@ Para jugar, clona el repositorio o descarga los archivos, y abre el archivo `ind
 - `style.css`: Archivo CSS para el estilo de la estructura.
 - `app.js`: Archivo JavaScript que contiene la lógica del juego.
 
-## Autor
-
 Hecho por [Frank](https://github.com/FrankSkep)
