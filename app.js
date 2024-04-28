@@ -21,91 +21,85 @@ const ROCK = "rock";
 const PAPER = "paper";
 const SCISSORS = "scissors";
 
-
 // Agregar evento al hacer click a los botones
 rockButton.addEventListener("click", () => {
-  play(ROCK);
+    play(ROCK);
 });
 
 paperButton.addEventListener("click", () => {
-  play(PAPER);
+    play(PAPER);
 });
 
 scissorsButton.addEventListener("click", () => {
-  play(SCISSORS);
+    play(SCISSORS);
 });
 
 // Funcion
 function play(userOption) {
-  if (isPlaying) return;
-  isPlaying = true;
+    if (isPlaying) return;
+    isPlaying = true;
 
-  userImg.src = "images/" + userOption + ".svg";
+    userImg.src = "images/" + userOption + ".svg";
 
-  resultText.innerHTML = `<b>...<b/>`;
+    resultText.innerHTML = `<b>...<b/>`;
 
-  // Intervalo para cambiar imagen cada 2 milesimas
-  const interval = setInterval(function () {
-    const machineOption = determineMachineOption();
-    machineImg.src = "images/" + machineOption + ".svg";
-  }, 200);
+    // Intervalo para cambiar imagen cada 2 milesimas
+    const interval = setInterval(function () {
+        const machineOption = determineMachineOption();
+        machineImg.src = "images/" + machineOption + ".svg";
+    }, 200);
 
-  setTimeout(function () {
+    setTimeout(function () {
+        clearInterval(interval);
 
-    clearInterval(interval);
+        const machineOption = determineMachineOption();
 
-    const machineOption = determineMachineOption();
+        // Guardar resultado en variable result
+        const result = gameResult(userOption, machineOption);
+        machineImg.src = "images/" + machineOption + ".svg";
 
-    // Guardar resultado en variable result
-    const result = gameResult(userOption, machineOption);
-    machineImg.src = "images/" + machineOption + ".svg";
-
-    // Switch case con los resultados
-    switch (result) {
-      case WIN:
-        resultText.innerHTML = "<b>You win!</b>";
-        break;
-      case LOST:
-        resultText.innerHTML = "<b>You lost!</b>";
-        break;
-      case TIE:
-        resultText.innerHTML = "<b>Is a tied! </b>";
-        break;
-    } isPlaying = false;
-  }, 1500);
+        // Switch case con los resultados
+        switch (result) {
+            case WIN:
+                resultText.innerHTML = "<b>You win!</b>";
+                break;
+            case LOST:
+                resultText.innerHTML = "<b>You lost!</b>";
+                break;
+            case TIE:
+                resultText.innerHTML = "<b>Is a tied! </b>";
+                break;
+        }
+        isPlaying = false;
+    }, 1500);
 }
 
 // Funcion para calcular la opcion de la maquina
 function determineMachineOption() {
-  const machineOption = Math.floor(Math.random() * 3);
+    const machineOption = Math.floor(Math.random() * 3);
 
-  switch (machineOption) {
-    case 0:
-      return ROCK;
-    case 1:
-      return PAPER;
-    case 2:
-      return SCISSORS;
-  }
+    switch (machineOption) {
+        case 0:
+            return ROCK;
+        case 1:
+            return PAPER;
+        case 2:
+            return SCISSORS;
+    }
 }
 
 // Funcion para calcular resultado
 function gameResult(userOpt, machineOpt) {
-  if (userOpt === machineOpt) {
-    return TIE;
-
-  } else if (userOpt === ROCK) {
-
-    if (machineOpt === PAPER) return LOST;
-    if (machineOpt === SCISSORS) return WIN;
-
-  } else if (userOpt === PAPER) {
-
-    if (machineOpt === ROCK) return WIN;
-    if (machineOpt === SCISSORS) return LOST;
-
-  } else if (userOpt === SCISSORS) {
-    if (machineOpt === ROCK) return LOST;
-    if (machineOpt === PAPER) return WIN;
-  }
+    if (userOpt === machineOpt) {
+        return TIE;
+    } else if (userOpt === ROCK) {
+        if (machineOpt === PAPER) return LOST;
+        if (machineOpt === SCISSORS) return WIN;
+    } else if (userOpt === PAPER) {
+        if (machineOpt === ROCK) return WIN;
+        if (machineOpt === SCISSORS) return LOST;
+    } else if (userOpt === SCISSORS) {
+        if (machineOpt === ROCK) return LOST;
+        if (machineOpt === PAPER) return WIN;
+    }
 }
