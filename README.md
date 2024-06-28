@@ -1,7 +1,7 @@
 # <h1 align="center">Piedra, Papel o Tijeras</h1>
 
 <p align="center">
-  <img src="https://ibb.co/4fCPXpQ" alt="Interfaz del juego">
+  <img src="https://i.ibb.co/YWJp1hr/preview.png" alt="Interfaz del juego">
 </p>
 
 Juego de Piedra, Papel o Tijeras implementado en HTML, CSS y JavaScript.
